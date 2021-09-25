@@ -172,6 +172,121 @@ public class Patterns {
             }
         }
     }
-    
+    public void TrianglePattern(int row){
+        int space = row;
+        for(int i=0;i<row;i++){
+            for(int x = space;x>0;x--){
+                System.out.print(" ");
+            }
+            space--;
+            for(int j=0;j<=i;j++){
+                if(j==0|| j==i){
+                    System.out.print("* ");
+                }else{
+                    System.out.print("  ");
+                }
+            }
+            System.out.println();
+            if(i==row-1){
+                for(int j = 0;j<=2*(row);j++){
+                    System.out.print("*");
+                }
+            }
+        }
+    }    
+    public void DownTrianglePattern(int row){
+        int space = 0;
+        for(int i=row;i>=0;i--){
+            if(i==row){
+                for(int j = 0;j<=2*(row);j++){
+                    System.out.print("*");
+                }
+                System.out.println();
+            }
+            for(int x = 0;x<space;x++){
+                System.out.print(" ");
+            }
+            for(int j=i;j>=0;j--){
+                if(j==i|| j==0){
+                    System.out.print("* ");
+                }else{
+                    System.out.print("  ");
+                }
+            }
+            space++;
+            System.out.println("");;
+        }
+    }
+    public void Diamond(int row){
+        int space = row;
+        for(int i=0;i<row;i++){
+            for(int x = space;x>0;x--){
+                System.out.print(" ");
+            }
+            space--;
+            for(int j=0;j<=i;j++){
+                if(j==0|| j==i){
+                    System.out.print("* ");
+                }else{
+                    System.out.print("  ");
+                }
+            }
+            System.out.println();
+        }
+        for(int i=row;i>=0;i--){
+            for(int x = 0;x<space;x++){
+                System.out.print(" ");
+            }
+            for(int j=i;j>=0;j--){
+                if(j==i|| j==0){
+                    System.out.print("* ");
+                }else{
+                    System.out.print("  ");
+                }
+            }
+            space++;
+            System.out.println("");;
+        }
+    }
+    public void NumberPattern(int row){
+        for(int i =1;i<=row;i++){
+            for(int j=1;j<=i;j++){
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+    }
+    public void NumberPattern2(int row){
+        int num = 1;
+        for(int i =1;i<=row;i++){
+            for(int j=1;j<=i;j++){
+                System.out.print(num + " ");
+                num++;
+            }
+            System.out.println();
+        }
+    }
+    public void NumberPattern3(int row){
+            int spaceAmount = row;
+            int []old;
+            int sum =10;
+            for(int i =1;i<=row;i++){
+                spaceAmount--;
+                for(int x=spaceAmount;x>0;x--){
+                    System.out.print(" ");
+                }
+                old = new int[i+1];
+                for(int j=1;j<=i;j++){
+                    old[j]=old[j-1]+old[j];
+                }
+                for(int j = 1;j<=i;j++){
+                    if (old.length<=2){
+                        sum = old[j-1] +old[j];
+                        System.out.print(sum + " ");
+                    }
+                }
+                System.out.println();
+            }
+    }
 // public void 
 }
